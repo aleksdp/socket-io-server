@@ -1,0 +1,31 @@
+{
+  "name": "websocket",
+  "version": "1.0.0",
+  "description": "socket.io",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server.js --watch src/",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "websocket"
+  ],
+  "author": "dp.alex",
+  "license": "ISC",
+  "dependencies": {
+    "http": "0.0.0",
+    "isomorphic-fetch": "^2.2.1",
+    "nodemon": "^1.11.0",
+    "socket.io": "^1.5.1",
+    "socket.io-cookie-parser": "^1.0.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-core": "^6.18.2",
+    "babel-loader": "^6.2.7",
+    "babel-polyfill": "^6.16.0",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-latest": "^6.16.0",
+    "babel-preset-stage-0": "^6.16.0"
+  }
+}
