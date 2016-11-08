@@ -54,7 +54,7 @@ export default (token, refreshToken) => async (url, method = 'GET', {params, typ
                     return await data.json()
                 }
             }
-            throw new Error (error)
+            throw error
         }
         return await data.json()
     }

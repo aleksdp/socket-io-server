@@ -13,5 +13,6 @@ export default (socket, next)=>{
                 console.log(`client ${id} joined to room - ${room}`)
                 next()
             })
+            .catch(error=>console.error(`client ${socket.id}`, error))
     }
 }
