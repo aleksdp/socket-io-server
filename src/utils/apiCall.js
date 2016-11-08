@@ -4,8 +4,6 @@ import config from '../config'
 const {baseUrl} = config.api
 
 export default (token, refreshToken) => async (url, method = 'GET', {params, type = null, base_url = baseUrl} = {}) => {
-    // let token = this.token
-    // let refreshToken = this.token
     let headers_data = {}
     let body = {}
 
@@ -38,7 +36,7 @@ export default (token, refreshToken) => async (url, method = 'GET', {params, typ
     const headers = new Headers(headers_data)
 
     if(token){
-        headers.append('Authorization', 'Bearer '+token)
+        headers.append('Authorization', `Bearer ${token}`)
     }
 
     try {

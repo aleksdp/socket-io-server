@@ -4,6 +4,7 @@ import authorization from './middlewares/authorization'
 import messages from './middlewares/messages'
 
 const io = socketio.listen(8888)
+io.set('origins', '*:*')
 
 const middleware = [
     cookieParser(),
