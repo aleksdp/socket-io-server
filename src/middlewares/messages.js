@@ -6,7 +6,7 @@ export default (socket, next)=>{
     socket.on('send message', ({body, data})=>{
         if(!data.conversationId) return;
         apiCall(typeof (getConversation) == 'function' ? getConversation(data.conversationId) : getConversation)
-            .then(({response:{conversations:{users}}})=>{
+            .then(({response:{users}})=>{
                 apiCall(typeof (postMessage) == 'function' ? postMessage(data.conversationId): postMessage, 'POST', {
                     params: {
                         messageForm:{
