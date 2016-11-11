@@ -3,8 +3,8 @@ import config from '../config'
 
 export default (socket, next)=>{
     if(socket.request.cookies.token){
-        const apiCall = new apiCall(socket.request.cookies.token, socket.request.cookies.refreshToken)
-        apiCall(config.api.methods.getUserData)
+        const call = new apiCall(socket.request.cookies.token, socket.request.cookies.refreshToken)
+        call(config.api.methods.getUserData)
             .then(({response})=>{
                 const room = `users/id${response.id}`
                 socket.join(room)

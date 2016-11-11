@@ -4,12 +4,12 @@ import config from '../config'
 const {getConversation, postMessage} = config.api.methods
 
 export default (socket, next)=>{
-    const apiCall = new apiCall(socket.request.cookies.token, socket.request.cookies.refreshToken)
+    const call = new apiCall(socket.request.cookies.token, socket.request.cookies.refreshToken)
     socket.on('send message', ({body, data})=>{
         if(!data.conversationId) return;
-        apiCall(typeof (getConversation) == 'function' ? getConversation(data.conversationId) : getConversation)
+        call(typeof (getConversation) == 'function' ? getConversation(data.conversationId) : getConversation)
             .then(({response:{users}})=>{
-                apiCall(typeof (postMessage) == 'function' ? postMessage(data.conversationId): postMessage, 'POST', {
+                call(typeof (postMessage) == 'function' ? postMessage(data.conversationId): postMessage, 'POST', {
                     params: {
                         messageForm:{
                             text: body
